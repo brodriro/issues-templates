@@ -1,0 +1,40 @@
+name: "🐛​ Bug Report"
+description: Report an issue or possible bug
+labels: [bug]
+assignees: []
+body:
+  - type: input
+    id: workflow
+    attributes:
+      label: What is the workflow where the issue is happening
+      placeholder: Dashboard
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: What environment are you seeing the problem on?
+      multiple: true
+      options:
+        - Production
+        - Quality Assurance (QA)
+        - Development
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Output from Android Studio console (if required)
+      description: Please copy and paste any relevant log output.
+  - type: checkboxes
+    id: will-pr
+    attributes:
+      label: Participation
+      options:
+        - label:  I am willing to submit a pull request for this issue.
+          required: false
